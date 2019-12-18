@@ -1,12 +1,3 @@
-# express-redis
-
-Redis session store compatible with [express-session-go](https://github.com/Risk3sixty-Labs/express-session-go)
-
-## Usage
-
-See `examples/server.go`
-
-```go
 package main
 
 import (
@@ -29,7 +20,7 @@ func main() {
 
 	m.SetStore(&redisStore)
 	m.SetCookieKey("sid")
-  m.SetCookieSecret("r3stesting123")
+	m.SetCookieSecret("r3stesting123")
 
 	final := m.ExpressSessionMiddleware(http.HandlerFunc(handler))
 	http.Handle("/", final)
@@ -40,4 +31,3 @@ func main() {
 
 	log.Print("Successfully listening on *:8080")
 }
-```
