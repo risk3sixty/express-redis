@@ -28,8 +28,8 @@ func main() {
 	redisStore.CreateClient("redis://localhost:6379")
 
 	m.SetStore(&redisStore)
-  m.SetCookieKey("sid")
-  m.SetCookieSecret("r3stesting123")
+	m.SetCookieKey("sid")
+	m.SetCookieSecret("r3stesting123")
 
 	final := m.ExpressSessionMiddleware(http.HandlerFunc(handler))
 	http.Handle("/", final)
