@@ -1,6 +1,6 @@
 # express-redis
 
-Redis session store compatible with [express-session-go](https://github.com/Risk3sixty-Labs/express-session-go)
+Redis session store compatible with [express-session-go](https://github.com/whatl3y/express-session-go)
 
 ## Usage
 
@@ -14,7 +14,7 @@ import (
 	"net/http"
 
 	s "github.com/Risk3sixty-Labs/express-redis/store"
-	m "github.com/Risk3sixty-Labs/express-session-go/middleware"
+	m "github.com/whatl3y/express-session-go/middleware"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
