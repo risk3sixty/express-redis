@@ -19,7 +19,7 @@ import (
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	session, _ := r.Context().Value(m.SessionContextKey).(m.Session)
-  sid := session.SessionID
+	sid := session.SessionID
 	// session.SessionData contains all stored session data
 	w.Write([]byte("Session ID: " + sid))
 }
