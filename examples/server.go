@@ -1,7 +1,6 @@
 package main
 
 import (
-	"log"
 	"net/http"
 
 	s "github.com/Risk3sixty-Labs/express-redis/store"
@@ -11,6 +10,7 @@ import (
 func handler(w http.ResponseWriter, r *http.Request) {
 	session, _ := r.Context().Value(m.SessionContextKey).(m.Session)
 	sid := session.SessionID
+	// session.SessionData contains all stored session data
 	w.Write([]byte("Session ID: " + sid))
 }
 
@@ -28,6 +28,4 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-
-	log.Print("Successfully listening on *:8080")
 }

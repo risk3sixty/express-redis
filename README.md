@@ -19,7 +19,8 @@ import (
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	session, _ := r.Context().Value(m.SessionContextKey).(m.Session)
-	sid := session.SessionID
+  sid := session.SessionID
+	// session.SessionData contains all stored session data
 	w.Write([]byte("Session ID: " + sid))
 }
 
@@ -33,11 +34,6 @@ func main() {
 
 	final := m.ExpressSessionMiddleware(http.HandlerFunc(handler))
 	http.Handle("/", final)
-	err := http.ListenAndServe(":8080", nil)
-	if err != nil {
-		panic(err)
-	}
-
-	log.Print("Successfully listening on *:8080")
+	http.ListenAndServe(":8080", nil)
 }
 ```
