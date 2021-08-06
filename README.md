@@ -13,7 +13,7 @@ import (
 	"log"
 	"net/http"
 
-	s "github.com/Risk3sixty-Labs/express-redis/store"
+	s "github.com/risk3sixty/express-redis/store"
 	m "github.com/whatl3y/express-session-go/middleware"
 )
 
